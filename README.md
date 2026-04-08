@@ -52,7 +52,7 @@ Synthetic dataset creation
 Initial ETL structure setup
 
 
-🚀 Next Steps (Sprint 2)
+🚀 Next Steps (Sprint 1)
 Implement data cleaning pipeline:
 Handle null values
 Remove duplicates
@@ -61,7 +61,7 @@ Apply business transformation rules
 Generate analytics-ready dataset
 
 
-## 🚀 Next Steps (Sprint 2)
+## 🚀 Next Steps (Sprint 1)
 
 ### 🧹 Data Cleaning Pipeline
 
@@ -136,7 +136,7 @@ Generate analytics-ready dataset
 
 ---
 
-## 🎯 Expected Outcome (End of Sprint 2)
+## 🎯 Expected Outcome (End of Sprint 1)
 
 * Clean, validated, and structured dataset
 * Business-ready transformation layer
