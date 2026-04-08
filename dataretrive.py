@@ -5,7 +5,7 @@ import numpy as np
 df = pd.read_csv("raw_sales_data_200_dirty.csv")
 
 # -----------------------------
-# 1. Remove duplicates (keep first)
+# 1. Remove duplicates
 # -----------------------------
 df = df.drop_duplicates()
 
@@ -18,22 +18,22 @@ df['unit_price'] = df['unit_price'].fillna(df['unit_price'].median())
 df['product_category'] = df['product_category'].fillna('Unknown')
 
 # -----------------------------
-# 3. Fix negative values (convert to positive)
+# 3. Fix negative values
 # -----------------------------
 df['quantity_sold'] = df['quantity_sold'].abs()
 df['unit_price'] = df['unit_price'].abs()
 
-# Replace zeros if any (optional safety)
+# Replace zeros (optional safety)
 df.loc[df['quantity_sold'] == 0, 'quantity_sold'] = df['quantity_sold'].median()
 df.loc[df['unit_price'] == 0, 'unit_price'] = df['unit_price'].median()
 
 # -----------------------------
-# 4. Fix date issues
+# 4. Fix date format (IMPORTANT)
 # -----------------------------
-# Convert dates (invalid → NaT)
+# Convert object → datetime
 df['order_date'] = pd.to_datetime(df['order_date'], errors='coerce')
 
-# Fill invalid dates with most frequent date
+# Fill invalid dates
 df['order_date'] = df['order_date'].fillna(df['order_date'].mode()[0])
 
 # -----------------------------
@@ -49,12 +49,14 @@ df['product_category'] = df['product_category'].replace({
 })
 
 # -----------------------------
-# Final dataset (no rows removed)
+# Final cleaned dataset
 # -----------------------------
 df = df.reset_index(drop=True)
 
 # Save cleaned data
 df.to_csv("cleaned_sales_data.csv", index=False)
 
-print("✅ Cleaned dataset ready (no rows removed)")
+# Check result
+print("✅ Cleaned dataset ready")
 print("Final row count:", len(df))
+print(df.dtypes)
