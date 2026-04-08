@@ -2,9 +2,13 @@
 ✅ Design Phase
 Data model and system design have been reviewed and approved
 Identified that the API structure does not align with business requirements
+
+
+
 ⚠️ Key Challenge Identified
 The API (fake-store-api) provides product-level data
 Business requirement needs transaction-level (sales) data
+
 
 👉 Decision Taken:
 
@@ -22,6 +26,8 @@ Invalid dates
 Negative values
 Category inconsistencies
 
+
+
 👉 Purpose: To test robustness of ETL pipeline
 
 👥 Team Responsibilities
@@ -37,10 +43,15 @@ Analytics & UI	Mithra	Dashboard, insights, visualization
 ⏳ Data cleaning (in progress)
 ⏳ Transformation logic (pending)
 🎯 Sprint 1 Deliverables Completed
+
+
+
 Data source analysis
 Gap identification (API vs business needs)
 Synthetic dataset creation
 Initial ETL structure setup
+
+
 🚀 Next Steps (Sprint 2)
 Implement data cleaning pipeline:
 Handle null values
